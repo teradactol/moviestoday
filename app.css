@@ -3,7 +3,7 @@ body{
     background-color: #FAFAF2;
 }
 
-#appIcon,#appName,#appMessage{
+#appIcon,#appName,#appMessage,#appPreview{
     text-align: center;
 }
 

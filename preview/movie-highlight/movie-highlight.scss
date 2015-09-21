@@ -1,0 +1,25 @@
+.movie-highlight{
+
+  .movie-highlight-poster{
+    img{
+      width: 100%;
+    }
+  }
+
+  .movie-highlight-title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.col-lg-2.movie-highlight:nth-child(6n+1){
+  clear: both;
+}
+
+.col-md-2.movie-highlight:nth-child(6n+1){
+  clear: both;
+}
+
+.col-sm-4.movie-highlight:nth-child(3n+1){
+  clear: both;
+}

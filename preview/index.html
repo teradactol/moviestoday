@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="moviestoday">
+<head lang="en" >
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <title>Movies Today</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="app.css"/>
+</head>
+<body ng-controller="appCtrl">
+
+<div class="row">
+    <div class="col-xs-12" id="app-banner">
+        <div class="row">
+            <div class="col-xs-12" id="app-banner-section-1">
+                <img src="logo.png" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="app-menu">
+    <div class="col-lg-2 col-md-2 app-menu-section"></div>
+    <div class="col-lg-8 col-md-8 app-menu-section">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 app-menu-item">About</div>
+            <div class="col-lg-3 col-md-3 col-sm-3 app-menu-item active">Century Cinemax</div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 app-menu-section"></div>
+</div>
+<div class="row" id="now-showing">
+    <div class="col-lg-2 col-md-2 col-sm-1  now-showing-section"></div>
+    <div class="col-lg-8 col-md-8 col-sm-10 now-showing-section">
+        <div class="row">
+            <div class="col-xs-12" id="now-showing-prompt">
+                Now showing
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
+                <div class="movie-highlight-poster">
+                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                </div>
+                <div class="movie-highlight-title">
+                    {{movie.title}}
+                </div>
+            </div>
+            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
+                <div class="movie-highlight-poster">
+                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                </div>
+                <div class="movie-highlight-title">
+                    {{movie.title}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-1 now-showing-section"></div>
+</div>
+<div class="row" id="coming-soon">
+    <div class="col-lg-2 col-md-2 col-sm-1 coming-soon-section"></div>
+    <div class="col-lg-8 col-md-8 col-sm-10 coming-soon-section">
+        <div class="row">
+            <div class="col-xs-12" id="coming-soon-prompt">
+                Coming Soon
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
+                <div class="movie-highlight-poster">
+                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                </div>
+                <div class="movie-highlight-title">
+                    {{movie.title}}
+                </div>
+            </div>
+
+            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
+                <div class="movie-highlight-poster">
+                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                </div>
+                <div class="movie-highlight-title">
+                    {{movie.title}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-1 coming-soon-section"></div>
+</div>
+
+
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://stickyjs.com/jquery.sticky.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

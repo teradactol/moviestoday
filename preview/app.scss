@@ -1,0 +1,14 @@
+@import "app-banner/app-banner";
+@import "fonts/fonts";
+@import "app-menu/app-menu";
+@import "movie-highlight/movie-highlight";
+@import "now-showing/now-showing";
+@import "coming-soon/coming-soon";
+
+body{
+  background-color: #fafaf2;
+  overflow-x: hidden;
+  color: #777;
+  font-family: "Karla","Helvetica",sans-serif;
+}
+

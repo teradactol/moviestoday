@@ -1,0 +1,18 @@
+#app-menu{
+  width: 100%;
+  z-index: 100;
+  margin: 0;
+  background-color: #fff;
+  border-top: 1px solid rgba(0,0,0,.1);
+  .app-menu-section{
+    .app-menu-item{
+      padding: 15px 15px;
+      text-align: center;
+      cursor: default;
+    }
+    .app-menu-item.active{
+      border-top: 3px solid #222;
+    }
+  }
+
+}
