@@ -65,6 +65,19 @@
   #coming-soon #coming-soon-prompt {
     line-height: 40px; }
 
+.more-card .more-card-poster {
+  padding: 0px; }
+  .more-card .more-card-poster img {
+    width: 100%; }
+.more-card .more-card-info.csoon {
+  background-color: #fafaf2; }
+.more-card .more-card-info.nshow {
+  background-color: #222; }
+.more-card .modal-body {
+  padding: 0px; }
+.more-card .modal-content {
+  background: none !important; }
+
 body {
   background-color: #fafaf2;
   overflow-x: hidden;

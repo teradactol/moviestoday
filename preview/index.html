@@ -28,6 +28,48 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PDH7R2');</script>
+
+  <div ng-repeat="movie in cinemax.nshow" class="modal fade more-card" id="Modal_{{movie['_id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="row" ng-hide="movie.trailer === 'N/A'">
+                      <div class="col-xs-12">
+                          <iframe width="100%" height="400px" ng-src="{{getYouTubeEmbed(movie.trailer)}}" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                  </div>
+                  <div class="row more-card-info nshow">
+                      <div class="col-xs-9"></div>
+                      <div class="col-xs-3 more-card-poster">
+                          <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div ng-repeat="movie in cinemax.csoon" class="modal fade more-card" id="Modal_{{movie['_id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="row" ng-hide="movie.trailer === 'N/A'">
+                      <div class="col-xs-12">
+                          <iframe width="100%" height="400px" ng-src="{{getYouTubeEmbed(movie.trailer)}}" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                  </div>
+                  <div class="row more-card-info csoon">
+                      <div class="col-xs-9"></div>
+                      <div class="col-xs-3 more-card-poster">
+                          <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
 <div class="row">
     <div class="col-xs-12" id="app-banner">
         <div class="row">
@@ -57,7 +99,7 @@
         </div>
         <div class="row">
             <div class="col-lg-2 col-md-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
-                <div class="movie-highlight-poster">
+                <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
@@ -65,7 +107,7 @@
                 </div>
             </div>
             <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
-                <div class="movie-highlight-poster">
+                <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
@@ -87,7 +129,7 @@
         </div>
         <div class="row">
             <div class="col-lg-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
-                <div class="movie-highlight-poster">
+                <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
@@ -96,7 +138,7 @@
             </div>
 
             <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
-                <div class="movie-highlight-poster">
+                <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
@@ -108,6 +150,8 @@
     </div>
     <div class="col-lg-2 col-md-2 col-sm-1 coming-soon-section"></div>
 </div>
+
+
 
 
 
