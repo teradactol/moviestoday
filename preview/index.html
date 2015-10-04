@@ -98,7 +98,7 @@
         </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
+            <div class="col-lg-2 col-md-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.nshow" ng-hide="movie.trailer === 'N/A'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
@@ -106,7 +106,7 @@
                     {{movie.title}}
                 </div>
             </div>
-            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
+            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow" ng-hide="movie.trailer === 'N/A'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
@@ -128,7 +128,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
+            <div class="col-lg-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.csoon" ng-hide="movie.trailer === 'N/A'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
@@ -137,7 +137,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
+            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon" ng-hide="movie.trailer === 'N/A'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
