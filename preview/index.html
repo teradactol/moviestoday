@@ -58,7 +58,7 @@
         <div class="row">
             <div class="col-lg-2 col-md-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
                 <div class="movie-highlight-poster">
-                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                    <img ng-src="movie.poster" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
                     {{movie.title}}
@@ -66,7 +66,7 @@
             </div>
             <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow">
                 <div class="movie-highlight-poster">
-                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                    <img ng-src="movie.poster" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
                     {{movie.title}}
@@ -88,7 +88,7 @@
         <div class="row">
             <div class="col-lg-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
                 <div class="movie-highlight-poster">
-                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                    <img ng-src="movie.poster" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
                     {{movie.title}}
@@ -97,7 +97,7 @@
 
             <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon">
                 <div class="movie-highlight-poster">
-                    <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                    <img ng-src="movie.poster" alt="{{movie.title}}">
                 </div>
                 <div class="movie-highlight-title">
                     {{movie.title}}
