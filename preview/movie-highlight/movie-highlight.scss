@@ -1,8 +1,11 @@
 .movie-highlight{
 
+  height: 300px;
+  margin-bottom: 10px;
+
   .movie-highlight-poster{
     img{
-      width: 100%;
+      height: 100%;
     }
   }
 
@@ -19,10 +22,25 @@
   clear: both;
 }
 
-.col-md-2.movie-highlight:nth-child(6n+1){
+.col-md-3.movie-highlight:nth-child(4n+1){
   clear: both;
 }
 
-.col-sm-4.movie-highlight:nth-child(3n+1){
+.col-sm-3.movie-highlight:nth-child(4n+1){
   clear: both;
+}
+
+
+.col-xs-6.movie-highlight:nth-child(2n+1){
+  clear: both;
+}
+
+
+.col-lg-2,
+.col-md-3,
+.col-sm-3,
+.col-xs-6,{
+    .movie-highlight-poster{
+        height: 220px;
+    }
 }

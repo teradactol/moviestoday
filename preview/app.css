@@ -39,22 +39,34 @@
   #app-menu .app-menu-section .app-menu-item.active {
     border-top: 3px solid #222; }
 
-.movie-highlight .movie-highlight-poster img {
-  width: 100%; }
-.movie-highlight .movie-highlight-title {
-  padding-top: 10px; }
-.movie-highlight .movie-highlight-genre {
-  padding-bottom: 10px;
-  font-size: smaller; }
+.movie-highlight {
+  height: 300px;
+  margin-bottom: 10px; }
+  .movie-highlight .movie-highlight-poster img {
+    height: 100%; }
+  .movie-highlight .movie-highlight-title {
+    padding-top: 10px; }
+  .movie-highlight .movie-highlight-genre {
+    padding-bottom: 10px;
+    font-size: smaller; }
 
 .col-lg-2.movie-highlight:nth-child(6n+1) {
   clear: both; }
 
-.col-md-2.movie-highlight:nth-child(6n+1) {
+.col-md-3.movie-highlight:nth-child(4n+1) {
   clear: both; }
 
-.col-sm-4.movie-highlight:nth-child(3n+1) {
+.col-sm-3.movie-highlight:nth-child(4n+1) {
   clear: both; }
+
+.col-xs-6.movie-highlight:nth-child(2n+1) {
+  clear: both; }
+
+.col-lg-2 .movie-highlight-poster,
+.col-md-3 .movie-highlight-poster,
+.col-sm-3 .movie-highlight-poster,
+.col-xs-6 .movie-highlight-poster {
+  height: 220px; }
 
 #now-showing {
   background-color: #222;
