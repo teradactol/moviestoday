@@ -33,7 +33,7 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-body">
-                  <div class="row" ng-hide="movie.trailer === 'N/A'">
+                  <div class="row" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
                       <div class="col-xs-12">
                           <iframe width="100%" height="400px" ng-src="{{getYouTubeEmbed(movie.trailer)}}" frameborder="0" allowfullscreen></iframe>
                       </div>
@@ -53,7 +53,7 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-body">
-                  <div class="row" ng-hide="movie.trailer === 'N/A'">
+                  <div class="row" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
                       <div class="col-xs-12">
                           <iframe width="100%" height="400px" ng-src="{{getYouTubeEmbed(movie.trailer)}}" frameborder="0" allowfullscreen></iframe>
                       </div>
@@ -98,7 +98,7 @@
         </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 col-md-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.nshow" ng-hide="movie.trailer === 'N/A'">
+            <div class="col-lg-2 col-md-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.nshow" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
@@ -109,7 +109,7 @@
                     {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
                 </div>
             </div>
-            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow" ng-hide="movie.trailer === 'N/A'">
+            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
@@ -134,7 +134,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.csoon" ng-hide="movie.trailer === 'N/A'">
+            <div class="col-lg-2 col-md-2 hidden-sm movie-highlight" ng-repeat="movie in cinemax.csoon" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
@@ -146,7 +146,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon" ng-hide="movie.trailer === 'N/A'">
+            <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
                     <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
