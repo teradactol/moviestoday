@@ -42,8 +42,10 @@
 .movie-highlight .movie-highlight-poster img {
   width: 100%; }
 .movie-highlight .movie-highlight-title {
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-top: 10px; }
+.movie-highlight .movie-highlight-genre {
+  padding-bottom: 10px;
+  font-size: smaller; }
 
 .col-lg-2.movie-highlight:nth-child(6n+1) {
   clear: both; }

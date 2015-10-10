@@ -105,6 +105,9 @@
                 <div class="movie-highlight-title">
                     {{movie.title}}
                 </div>
+                <div class="movie-highlight-genre">
+                    {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
+                </div>
             </div>
             <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.nshow" ng-hide="movie.trailer === 'N/A'">
                 <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
@@ -112,6 +115,9 @@
                 </div>
                 <div class="movie-highlight-title">
                     {{movie.title}}
+                </div>
+                <div class="movie-highlight-genre">
+                    {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
                 </div>
             </div>
 
@@ -135,6 +141,9 @@
                 <div class="movie-highlight-title">
                     {{movie.title}}
                 </div>
+                <div class="movie-highlight-genre">
+                    {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
+                </div>
             </div>
 
             <div class="col-sm-4 visible-sm movie-highlight" ng-repeat="movie in cinemax.csoon" ng-hide="movie.trailer === 'N/A'">
@@ -143,6 +152,9 @@
                 </div>
                 <div class="movie-highlight-title">
                     {{movie.title}}
+                </div>
+                <div class="movie-highlight-genre">
+                    {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
                 </div>
             </div>
 
