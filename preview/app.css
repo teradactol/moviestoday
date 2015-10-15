@@ -37,7 +37,9 @@
     text-align: center;
     cursor: default; }
   #app-menu .app-menu-section .app-menu-item.active {
-    border-top: 3px solid #222; }
+    border-top: 3px solid #222;
+    background-color: #222;
+    color: #fafaf2; }
 
 .movie-highlight {
   height: 300px;
@@ -66,7 +68,9 @@
 .col-md-3 .movie-highlight-poster,
 .col-sm-3 .movie-highlight-poster,
 .col-xs-6 .movie-highlight-poster {
-  height: 220px; }
+  height: 220px;
+  width: 149px;
+  overflow: hidden; }
 
 #now-showing {
   background-color: #222;

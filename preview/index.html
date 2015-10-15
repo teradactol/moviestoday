@@ -37,6 +37,27 @@
   '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PDH7R2');</script>
 
+  <div ng-repeat="movie in cinemagic.nshow" class="modal fade more-card" id="Modal_{{movie['_id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="row" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
+                      <div class="col-xs-12">
+                          <iframe width="100%" height="400px" ng-src="{{getYouTubeEmbed(movie.trailer)}}" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                  </div>
+                  <div class="row more-card-info nshow">
+                      <div class="col-xs-9"></div>
+                      <div class="col-xs-3 more-card-poster">
+                          <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
   <div ng-repeat="movie in cinemax.nshow" class="modal fade more-card" id="Modal_{{movie['_id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -92,17 +113,24 @@
     <div class="col-lg-8 col-md-8 app-menu-section">
         <div class="row">
 <!--            <div class="col-lg-3 col-md-3 col-sm-3 app-menu-item">About</div>-->
-            <div class="col-lg-3 col-md-3 col-sm-3 app-menu-item active">Century Cinemax</div>
+            <div class="col-lg-3 col-md-3 col-sm-3 app-menu-item active cinema_tab" id="tab_cinemax" ng-click="vw_cinema('cinemax')">Century Cinemax<br/>( Acacia Mall )</div>
+            <div class="col-lg-3 col-md-3 col-sm-3 app-menu-item cinema_tab" id="tab_cinemagic" ng-click="vw_cinema('cinemagic')">Cinema Magic<br/>( Metroplex Mall )</div>
         </div>
     </div>
     <div class="col-lg-2 col-md-2 app-menu-section"></div>
 </div>
-<div class="row" id="now-showing">
+
+<!--
+=======================
+    CENTURY CINEMAX
+======================
+-->
+<div class="row" id="now-showing" ng-show="active_cinema === 'cinemax' ">
     <div class="col-lg-2 col-md-2 col-sm-1  now-showing-section"></div>
     <div class="col-lg-8 col-md-8 col-sm-10 now-showing-section">
         <div class="row">
             <div class="col-xs-12" id="now-showing-prompt">
-                Now showing
+                Century Cinemax | Now showing
         </div>
         </div>
         <div class="row">
@@ -155,12 +183,12 @@
     </div>
     <div class="col-lg-2 col-md-2 col-sm-1 now-showing-section"></div>
 </div>
-<div class="row" id="coming-soon">
+<div class="row" id="coming-soon" ng-show="active_cinema === 'cinemax' ">
     <div class="col-lg-2 col-md-2 col-sm-1 coming-soon-section"></div>
     <div class="col-lg-8 col-md-8 col-sm-10 coming-soon-section">
         <div class="row">
             <div class="col-xs-12" id="coming-soon-prompt">
-                Coming Soon
+                Century Cinemax | Coming Soon
             </div>
         </div>
         <div class="row">
@@ -217,6 +245,70 @@
     <div class="col-lg-2 col-md-2 col-sm-1 coming-soon-section"></div>
 </div>
 
+
+<!--
+=======================
+     CINEMA MAGIC
+======================
+-->
+  <div class="row" id="now-showing" ng-show="active_cinema === 'cinemagic' ">
+      <div class="col-lg-2 col-md-2 col-sm-1  now-showing-section"></div>
+      <div class="col-lg-8 col-md-8 col-sm-10 now-showing-section">
+          <div class="row">
+              <div class="col-xs-12" id="now-showing-prompt">
+                  Cinema Magic | Now showing
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-2 visible-lg hidden-sm movie-highlight" ng-repeat="movie in cinemagic.nshow" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
+                  <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
+                      <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                  </div>
+                  <div class="movie-highlight-title">
+                      {{movie.title}}
+                  </div>
+                  <div class="movie-highlight-genre">
+                      {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
+                  </div>
+              </div>
+              <div class="col-md-3 visible-md movie-highlight" ng-repeat="movie in cinemagic.nshow" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
+                  <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
+                      <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                  </div>
+                  <div class="movie-highlight-title">
+                      {{movie.title}}
+                  </div>
+                  <div class="movie-highlight-genre">
+                      {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
+                  </div>
+              </div>
+              <div class="col-sm-3 visible-sm movie-highlight" ng-repeat="movie in cinemagic.nshow" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
+                  <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
+                      <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                  </div>
+                  <div class="movie-highlight-title">
+                      {{movie.title}}
+                  </div>
+                  <div class="movie-highlight-genre">
+                      {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
+                  </div>
+              </div>
+              <div class="col-xs-6 visible-xs movie-highlight" ng-repeat="movie in cinemagic.nshow" ng-hide="movie.trailer === 'N/A' || movie.title === 'Kitchen Sink'">
+                  <div class="movie-highlight-poster" data-toggle="modal" data-target="#Modal_{{movie['_id']}}">
+                      <img ng-src="{{movie.poster}}" alt="{{movie.title}}">
+                  </div>
+                  <div class="movie-highlight-title">
+                      {{movie.title}}
+                  </div>
+                  <div class="movie-highlight-genre">
+                      {{movie.duration}} - {{movie.content_rating}} {{movie.genre}}
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-1 now-showing-section"></div>
+  </div>
 
 
 

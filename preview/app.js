@@ -16,17 +16,29 @@ var moviestoday = angular.module('moviestoday',[])
         var host = urlSvs.getApiHost();
 
         $scope.getYouTubeEmbed = function(url){
-            console.log("Youtube url found : " + url);
             var embed_url = url.replace("watch?v=","embed/");
-            console.log("Youtube embed url returned : " + embed_url);
             return $sce.trustAsResourceUrl(embed_url);
         };
 
+        $scope.active_cinema = "cinemax";
+
+        $scope.vw_cinema = function(id){
+            console.log("Cinema : " + id);
+            $(".cinema_tab").removeClass('active');
+            $("#tab_"+id).addClass('active');
+            $scope.active_cinema = id
+        };
+
         $scope.cinemax = {};
+        $scope.cinemagic = {};
+
         $scope.cinemax.csoon = [
             {"title":"Loading","poster":"http://ia.media-imdb.com/images/M/MV5BMTUyNjE5NjI5OF5BMl5BanBnXkFtZTgwNzYzMzU3NjE@._V1_SX640_SY720_.jpg"},
         ];
         $scope.cinemax.nshow = [
+            {"title":"Loading","poster":"http://ia.media-imdb.com/images/M/MV5BMTUyNjE5NjI5OF5BMl5BanBnXkFtZTgwNzYzMzU3NjE@._V1_SX640_SY720_.jpg"},
+        ];
+        $scope.cinemagic.nshow = [
             {"title":"Loading","poster":"http://ia.media-imdb.com/images/M/MV5BMTUyNjE5NjI5OF5BMl5BanBnXkFtZTgwNzYzMzU3NjE@._V1_SX640_SY720_.jpg"},
         ];
 
@@ -36,6 +48,10 @@ var moviestoday = angular.module('moviestoday',[])
 
         $http.get(host+'/wscinemax/nowshowing',{withCredentials : true}).success(function(data){
             $scope.cinemax.nshow = data;
+        });
+
+        $http.get(host+'/wscinemagic/nowshowing',{withCredentials : true}).success(function(data){
+            $scope.cinemagic.nshow = data;
         });
 }])
 
