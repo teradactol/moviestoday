@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,YAAY;EACV,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAC,IAAI;EACV,gCAAmB;IACjB,WAAW,EAAE,IAAI",
-"sources": ["coming-soon.scss"],
-"names": [],
-"file": "coming-soon.css"
-}
